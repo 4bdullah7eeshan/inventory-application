@@ -12,7 +12,13 @@ const createNewCategory = asyncHandler(async (req, res) => {
     res.redirect("/categories");
 });
 
+const getNewCategory = asyncHandler(async (req, res) => {
+    res.render("pages/newCategory", { title: "New Category" });
+});
+
+
 module.exports = {
     getAllCategories,
     createNewCategory,
+    getNewCategory,
 };
