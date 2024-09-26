@@ -53,6 +53,19 @@ async function deleteAsmrtist(id) {
     await pool.query('DELETE FROM asmrtists WHERE id = $1', [id]);
 };
 
+// Association Stuff
+
+async function getAsmrtistsByCategory(categoryId) {
+    const { rows } = await pool.query(
+        `SELECT asmrtists.id, asmrtists.name, asmrtists.yt_channel 
+         FROM asmrtists
+         JOIN category_asmrtists ON asmrtists.id = category_asmrtists.asmrtist_id
+         WHERE category_asmrtists.category_id = $1`,
+        [categoryId]
+    );
+    return rows;
+}
+
 module.exports = {
     getAllCategories,
     getAllAsmrtists,
@@ -63,5 +76,7 @@ module.exports = {
     updateCategory,
     updateAsmrtist,
     deleteCategory,
-    deleteAsmrtist
+    deleteAsmrtist,
+    getAsmrtistsByCategory,
+
 };
