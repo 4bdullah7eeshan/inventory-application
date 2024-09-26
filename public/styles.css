@@ -40,9 +40,10 @@ nav {
 
 .nav-link a,
 .category-view-button button,
-.add-new-category a {
+.add-new-category a,
+.new-category-form-submit-button button {
     font-family: 'Viaoda Libre', cursive;
-    font-size: 1.25rem;
+    font-size: rem;
     text-decoration: none;
     color: white;
     outline: 1px solid white;
@@ -52,7 +53,8 @@ nav {
 
 .nav-link a:hover,
 .category-view-button button:hover,
-.add-new-category a:hover {
+.add-new-category a:hover,
+.new-category-form-submit-button button:hover {
     background-color: #d6b0c0;
     color: black;
     outline: 1px solid black;
@@ -142,12 +144,19 @@ footer {
     outline: 1.5px solid black;
 }
 
-.new-category-form {
+.new-category-form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.new-category-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 
 
 

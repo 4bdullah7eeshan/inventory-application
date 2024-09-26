@@ -1,9 +1,9 @@
-<form method="POST" action="/new">
-    <h2>New Category</h2>
+<form method="POST" action="/new" class="new-category-form">
+    <h2 class="text-center">New Category</h2>
     
     <div>
         <label for="category">Category (required):</label>
-        <input type="text" id="category" name="category" placeholder="Zara" required>
+        <input type="text" id="category" name="category" placeholder="Nature Sounds" required>
     </div>
     
     <div>
@@ -11,7 +11,7 @@
             <label for="description">Description:</label>
         </div>
         <div>
-            <textarea type="text" id="description" name="description" placeholder="Look..." rows="5" cols="50"></textarea>
+            <textarea type="text" id="description" name="description" placeholder="Natural ambient sounds such as leaves rustling, wind blowing, or birds chirping" rows="5" cols="50"></textarea>
     
         </div>
     </div>
@@ -21,12 +21,7 @@
         <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" style="width: 230px;">
     </div>
     
-    <div>
+    <div class="new-category-form-submit-button text-center">
         <button type="submit">Post</button>
-    </div>
-    
-    <div>
-        <a href="/">Home</a>
-        <a href="/categories">View All Categories</a>
     </div>
 </form>
