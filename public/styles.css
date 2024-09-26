@@ -44,7 +44,8 @@ nav {
 .new-category-form-submit-button button,
 .edit-category-button a,
 .delete-category-button a,
-.add-new-asmrtist a {
+.add-new-asmrtist a,
+.new-asmrtist-form-submit-button button {
     font-family: 'Viaoda Libre', cursive;
     font-size: rem;
     text-decoration: none;
@@ -60,7 +61,8 @@ nav {
 .new-category-form-submit-button button:hover,
 .edit-category-button a:hover,
 .delete-category-button a:hover,
-.add-new-asmrtist a:hover {
+.add-new-asmrtist a:hover,
+.new-asmrtist-form-submit-button button:hover {
     background-color: #d6b0c0;
     color: black;
     outline: 1px solid black;
@@ -151,7 +153,8 @@ footer {
 }
 
 .new-category-form-container,
-.edit-category-form-container {
+.edit-category-form-container,
+.new-asmrtist-form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -159,7 +162,8 @@ footer {
 }
 
 .new-category-form,
-.edit-category-form {
+.edit-category-form,
+.new-asmrtist-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
