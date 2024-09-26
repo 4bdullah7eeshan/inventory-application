@@ -44,6 +44,15 @@ const deleteAsmrtist = asyncHandler(async (req, res) => {
 });
 
 
+// Association Stuff
+
+const getCategoriesForAsmrtist = asyncHandler(async (req, res) => {
+    const asmrtistId = parseInt(req.params.id, 10);
+    const categories = await db.getCategoriesByAsmrtist(asmrtistId);
+    return categories;
+    // figure out rendering later
+});
+
 module.exports = {
     getAllAsmrtists,
     getNewAsmrtist,
@@ -52,5 +61,7 @@ module.exports = {
     getUpdateASMRtist,
     updateASMRtist,
     deleteAsmrtist,
+    getCategoriesForAsmrtist,
+    
     
 };
