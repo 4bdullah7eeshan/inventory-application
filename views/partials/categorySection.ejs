@@ -4,9 +4,16 @@
         <img src="<%= category.image %>" alt="<%= category.name %>">
     </div>
     <p><%= category.description %></p>
-    <div class="edit-category-button text-center">
-        <a href="/categories/<%= category.id %>/edit">Edit</a>
+    <div class="category-manage-buttons">
+        <span class="edit-category-button text-center">
+            <a href="/categories/<%= category.id %>/edit">Edit</a>
+        </span>
+        <span class="delete-category-button text-center">
+            <a href="/categories/<%= category.id %>/delete">Delete</a>
+        </span>
     </div>
+    
+    
 
     
 </section>
