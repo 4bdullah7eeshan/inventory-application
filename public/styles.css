@@ -45,7 +45,9 @@ nav {
 .edit-category-button a,
 .delete-category-button a,
 .add-new-asmrtist a,
-.new-asmrtist-form-submit-button button {
+.new-asmrtist-form-submit-button button,
+.edit-asmrtist-button a,
+.delete-asmrtist-button a {
     font-family: 'Viaoda Libre', cursive;
     font-size: rem;
     text-decoration: none;
@@ -62,7 +64,9 @@ nav {
 .edit-category-button a:hover,
 .delete-category-button a:hover,
 .add-new-asmrtist a:hover,
-.new-asmrtist-form-submit-button button:hover {
+.new-asmrtist-form-submit-button button:hover,
+.edit-asmrtist-button a:hover,
+.delete-asmrtist-button a:hover {
     background-color: #d6b0c0;
     color: black;
     outline: 1px solid black;
@@ -169,7 +173,8 @@ footer {
     gap: 1.5rem;
 }
 
-.category-by-id {
+.category-by-id,
+.asmrtist-by-id {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -182,7 +187,8 @@ footer {
     height: auto;
 }
 
-.category-manage-buttons {
+.category-manage-buttons,
+.asmrtist-manage-buttons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
