@@ -66,6 +66,17 @@ async function getAsmrtistsByCategory(categoryId) {
     return rows;
 }
 
+async function getCategoriesByAsmrtist(asmrtistId) {
+    const { rows } = await pool.query(
+        `SELECT categories.id, categories.name, categories.description, categories.image
+         FROM categories
+         JOIN category_asmrtists ON categories.id = category_asmrtists.category_id
+         WHERE category_asmrtists.asmrtist_id = $1`,
+        [asmrtistId]
+    );
+    return rows;
+}
+
 module.exports = {
     getAllCategories,
     getAllAsmrtists,
@@ -78,5 +89,6 @@ module.exports = {
     deleteCategory,
     deleteAsmrtist,
     getAsmrtistsByCategory,
+    getCategoriesByAsmrtist,
 
 };
