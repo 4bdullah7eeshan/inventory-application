@@ -5,4 +5,6 @@ const categoriesRouter = Router();
 
 categoriesRouter.get("/", categoriesController.getAllCategories);
 
+categoriesRouter.get("/new", categoriesController.getNewCategory);
+
 module.exports = categoriesRouter;

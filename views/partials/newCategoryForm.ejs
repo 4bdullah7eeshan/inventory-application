@@ -1,20 +1,25 @@
 <form method="POST" action="/new">
     <h2>New Category</h2>
+    
     <div>
-        <label for="category">Category:</label>
-        <input type="text" id="category" name="category" placeholder="Zara">
+        <label for="category">*Category:</label>
+        <input type="text" id="category" name="category" placeholder="Zara" required>
     </div>
+    
     <div>
-        <label for="description">Message:</label>
+        <label for="description">Description:</label>
         <input type="text" id="description" name="description" placeholder="Look...">
     </div>
+    
     <div>
-        <label for="image">Image:</label>
-        <input type="image" id="image" name="image">
+        <label for="image">Image URL:</label>
+        <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg">
     </div>
+    
     <div>
         <button type="submit">Post</button>
     </div>
+    
     <div>
         <a href="/">Home</a>
         <a href="/categories">View All Categories</a>

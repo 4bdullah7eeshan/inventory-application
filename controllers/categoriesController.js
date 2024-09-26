@@ -6,14 +6,14 @@ const getAllCategories = asyncHandler(async (req, res) => {
     res.render("pages/categories", { title: "All Categories", categories: categories });
 });
 
+const getNewCategory = asyncHandler(async (req, res) => {
+    res.render("pages/newCategory", { title: "New Category" });
+});
+
 const createNewCategory = asyncHandler(async (req, res) => {
     const { name, description, image } = req.body;
     await db.insertNewCategory({ name: name, description: description, image: image });
     res.redirect("/categories");
-});
-
-const getNewCategory = asyncHandler(async (req, res) => {
-    res.render("pages/newCategory", { title: "New Category" });
 });
 
 const getCategoryById = asyncHandler(async (req, res) => {

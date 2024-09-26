@@ -14,6 +14,7 @@ app.use(express.static(assetsPath));
 app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 app.use("/categories", categoriesRouter);
+app.use("categories/new", categoriesRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Mini Message Board app running on port ${PORT}!`));
