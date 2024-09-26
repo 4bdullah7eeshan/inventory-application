@@ -1,0 +1,27 @@
+<form method="POST" action="/categories/edit/<%= category.id %>" class="edit-category-form">
+    <h2 class="text-center">New Category</h2>
+    
+    <div>
+        <label for="name">Category (required):</label>
+        <input type="text" id="name" name="name" placeholder="Nature Sounds" value="<%= category.name %>" required>
+    </div>
+    
+    <div>
+        <div>
+            <label for="description">Description:</label>
+        </div>
+        <div>
+            <textarea type="text" id="description" name="description" placeholder="Natural ambient sounds such as leaves rustling, wind blowing, or birds chirping" rows="5" cols="50"><%= category.description %></textarea>
+    
+        </div>
+    </div>
+    
+    <div>
+        <label for="image">Image URL:</label>
+        <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" style="width: 230px;" value="<%= category.description %>">
+    </div>
+    
+    <div class="new-category-form-submit-button text-center">
+        <button type="submit">Edit</button>
+    </div>
+</form>

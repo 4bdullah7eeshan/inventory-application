@@ -26,6 +26,12 @@ const getCategoryById = asyncHandler(async (req, res) => {
     res.render("pages/category", { title: category.name, category: category });
 });
 
+const getUpdateCategory = asyncHandler(async (req, res) => {
+    const categoryId = parseInt(req.params.id, 10); 
+    const category = await db.getCategoryById(categoryId);
+    res.render("pages/editCategory", { title: "Edit" + category.name, category: category });
+});
+
 const updateCategory = asyncHandler(async (req, res) => {
     const categoryId = parseInt(req.params.id, 10); 
     const { name, description, image } = req.body; 
@@ -46,4 +52,5 @@ module.exports = {
     getNewCategory,
     getCategoryById,
     updateCategory,
+    getUpdateCategory,
 };
