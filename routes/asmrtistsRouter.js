@@ -5,4 +5,6 @@ const asmrtistsRouter = Router();
 
 asmrtistsRouter.get("/", asmrtistsController.getAllAsmrtists);
 
+asmrtistsRouter.get("/new", asmrtistsController.getNewAsmrtist);
+
 module.exports = asmrtistsRouter;
