@@ -9,4 +9,6 @@ asmrtistsRouter.get("/new", asmrtistsController.getNewAsmrtist);
 
 asmrtistsRouter.post("/new", asmrtistsController.createNewASMRtist);
 
+asmrtistsRouter.get("/:id", asmrtistsController.getASMRtistById);
+
 module.exports = asmrtistsRouter;
