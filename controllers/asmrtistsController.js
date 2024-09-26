@@ -6,8 +6,13 @@ const getAllAsmrtists = asyncHandler(async (req, res) => {
     res.render("pages/asmrtists", { title: "All ASMRtists", asmrtists: asmrtists });
 });
 
+const getNewAsmrtist = asyncHandler(async (req, res) => {
+    res.render("pages/newASMRtist", { title: "New ASMRtist" });
+});
+
 
 module.exports = {
     getAllAsmrtists,
+    getNewAsmrtist,
     
 };
