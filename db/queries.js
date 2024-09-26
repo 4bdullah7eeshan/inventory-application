@@ -91,6 +91,15 @@ async function removeAsmrtistFromCategory(categoryId, asmrtistId) {
     );
 }
 
+const updateCategoryAsmrtists = async (categoryId, asmrtists) => {
+    await pool.query("DELETE FROM category_asmrtists WHERE category_id = $1", [categoryId]);
+
+    for (let asmrtistId of asmrtists) {
+        await pool.query("INSERT INTO category_asmrtists (category_id, asmrtist_id) VALUES ($1, $2)", [categoryId, asmrtistId]);
+    }
+};
+
+
 module.exports = {
     getAllCategories,
     getAllAsmrtists,
@@ -106,5 +115,6 @@ module.exports = {
     getCategoriesByAsmrtist,
     associateAsmrtistWithCategory,
     removeAsmrtistFromCategory,
+    updateCategoryAsmrtists,
 
 };
