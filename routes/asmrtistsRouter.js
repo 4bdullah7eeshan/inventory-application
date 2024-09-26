@@ -15,6 +15,8 @@ asmrtistsRouter.get("/:id/edit", asmrtistsController.getUpdateASMRtist);
 
 asmrtistsRouter.post("/:id/edit", asmrtistsController.updateASMRtist);
 
+asmrtistsRouter.get("/:id/delete", asmrtistsController.deleteAsmrtist);
+
 
 
 module.exports = asmrtistsRouter;
