@@ -146,14 +146,16 @@ footer {
     outline: 1.5px solid black;
 }
 
-.new-category-form-container {
+.new-category-form-container,
+.edit-category-form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.new-category-form {
+.new-category-form,
+.edit-category-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
