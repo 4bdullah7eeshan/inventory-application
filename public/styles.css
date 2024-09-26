@@ -183,6 +183,13 @@ footer {
     gap: 1.5rem;
 }
 
+.all-asmrtists-table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 
 
