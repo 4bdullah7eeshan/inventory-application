@@ -19,6 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.5;
+    background-color: #e7d7fb;
 }
 
 
@@ -28,24 +29,58 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem;
+    background-color: black;
+    color: white;
 }
 
-nav a {
+.home nav {
+    background-color: transparent;
+    color: black;
+}
+
+.nav-link a,
+.category-view-button button,
+.add-new-category a {
     font-family: 'Viaoda Libre', cursive;
     font-size: 1.25rem;
     text-decoration: none;
+    color: white;
+    outline: 1px solid white;
+    background-color: #7c5797;
+    padding: 0.5rem;
+}
+
+.nav-link a:hover,
+.category-view-button button:hover,
+.add-new-category a:hover {
+    background-color: #d6b0c0;
+    color: black;
+    outline: 1px solid black;
+}
+
+.home .logo a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
 }
 
 
-nav p,
+nav p {
+    font-family: 'Petit Formal Script', cursive;
+    font-size: 2.5rem;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: 'Petit Formal Script', cursive;
-    font-size: 2.5rem;
+    font-family: 'Viaoda Libre', cursive;   
 }
 
 main {
@@ -78,4 +113,34 @@ footer {
     align-items: center;
     padding: 0.5rem;
     outline: 1px solid black; /* Change it as needed */
+    background-color: black;
+    color: white;
 }
+
+.card-body {
+    background-color: black;
+    color: white;
+    outline: 1px solid white;
+}
+
+.category-image {
+    outline: 1px solid white;
+}
+
+.category-view-button {
+    padding: 0.5rem;
+    background-color: black;
+    outline: 1px solid white;
+
+}
+
+.add-new-category {
+    margin-top: 1.5rem;
+}
+
+.card {
+    outline: 1.5px solid black;
+}
+
+
+
