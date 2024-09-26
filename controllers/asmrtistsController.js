@@ -60,6 +60,13 @@ const associateCategoryWithAsmrtist = asyncHandler(async (req, res) => {
     await db.associateAsmrtistWithCategory(asmrtistId, category_id);
 });
 
+const removeCategoryFromAsmrtist = asyncHandler(async (req, res) => {
+    const asmrtistId = parseInt(req.params.asmrtistId, 10);
+    const categoryId = parseInt(req.params.categoryId, 10);
+
+    await db.removeAsmrtistFromCategory(asmrtistId, categoryId);
+});
+
 module.exports = {
     getAllAsmrtists,
     getNewAsmrtist,
@@ -69,7 +76,8 @@ module.exports = {
     updateASMRtist,
     deleteAsmrtist,
     getCategoriesForAsmrtist,
-    associateCategoryWithAsmrtist
+    associateCategoryWithAsmrtist,
+    removeCategoryFromAsmrtist,
 
     
 };
