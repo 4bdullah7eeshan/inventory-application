@@ -43,7 +43,8 @@ nav {
 .add-new-category a,
 .new-category-form-submit-button button,
 .edit-category-button a,
-.delete-category-button a {
+.delete-category-button a,
+.add-new-asmrtist a {
     font-family: 'Viaoda Libre', cursive;
     font-size: rem;
     text-decoration: none;
@@ -58,7 +59,8 @@ nav {
 .add-new-category a:hover,
 .new-category-form-submit-button button:hover,
 .edit-category-button a:hover,
-.delete-category-button a:hover {
+.delete-category-button a:hover,
+.add-new-asmrtist a:hover {
     background-color: #d6b0c0;
     color: black;
     outline: 1px solid black;
