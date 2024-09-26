@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS categories (
 
 INSERT INTO categories (name, description, image)
 VALUES
-('Sounds', 'Relaxing auditory experiences designed to stimulate the mind and soothe the body, ranging from soft whispers to tapping, crinkling, and nature sounds.', 'https://images.pexels.com/photos/6920041/pexels-photo-6920041.jpeg'),
+('Sounds', 'Relaxing auditory experiences designed to stimulate the mind and soothe the body, ranging from soft whispers to tapping, crinkling, and nature sounds.', 'https://images.pexels.com/photos/6920063/pexels-photo-6920063.jpeg'),
 ('Visuals', 'Carefully crafted visual triggers that aim to relax and captivate, including hand movements, close-up details, and calming light displays.', 'https://images.pexels.com/photos/5614145/pexels-photo-5614145.jpeg'),
 ('Role-play', 'Immersive and creative role-play scenarios, providing personal attention to the viewer with themes like spa visits, doctors, or friendly interactions.', 'https://images.pexels.com/photos/28572658/pexels-photo-28572658/free-photo-of-dramatic-dark-fantasy-portrait-with-horns.jpeg'),
 ('Eating', 'Soft and subtle eating sounds, featuring chewing, sipping, and crunching noises that offer calming, rhythmic stimulation.', 'https://images.pexels.com/photos/2383305/pexels-photo-2383305.jpeg'),
