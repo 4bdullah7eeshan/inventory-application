@@ -31,7 +31,9 @@ const getCategoryById = asyncHandler(async (req, res) => {
 const getUpdateCategory = asyncHandler(async (req, res) => {
     const categoryId = parseInt(req.params.id, 10); 
     const category = await db.getCategoryById(categoryId);
-    res.render("pages/editCategory", { title: "Edit" + category.name, category: category });
+    const associatedAsmrtists = await db.getAsmrtistsByCategory(categoryId);
+    const allAsmrtists = await db.getAllAsmrtists();
+    res.render("pages/editCategory", { title: "Edit" + category.name, category: category, associatedAsmrtists, allAsmrtists });
 });
 
 const updateCategory = asyncHandler(async (req, res) => {
