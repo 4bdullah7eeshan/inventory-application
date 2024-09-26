@@ -41,7 +41,8 @@ nav {
 .nav-link a,
 .category-view-button button,
 .add-new-category a,
-.new-category-form-submit-button button {
+.new-category-form-submit-button button,
+.edit-category-button a {
     font-family: 'Viaoda Libre', cursive;
     font-size: rem;
     text-decoration: none;
@@ -54,7 +55,8 @@ nav {
 .nav-link a:hover,
 .category-view-button button:hover,
 .add-new-category a:hover,
-.new-category-form-submit-button button:hover {
+.new-category-form-submit-button button:hover,
+.edit-category-button a:hover {
     background-color: #d6b0c0;
     color: black;
     outline: 1px solid black;
