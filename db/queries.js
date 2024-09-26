@@ -99,6 +99,13 @@ const updateCategoryAsmrtists = async (categoryId, asmrtists) => {
     }
 };
 
+const updateAsmrtistCategories = async (asmrtistId, categories) => {
+    await pool.query("DELETE FROM category_asmrtists WHERE asmrtist_id = $1", [asmrtistId]);
+
+    for (let categoryId of categories) {
+        await pool.query("INSERT INTO category_asmrtists (asmrtist_id, category_id) VALUES ($1, $2)", [asmrtistId, categoryId]);
+    }
+};
 
 module.exports = {
     getAllCategories,
@@ -116,5 +123,6 @@ module.exports = {
     associateAsmrtistWithCategory,
     removeAsmrtistFromCategory,
     updateCategoryAsmrtists,
+    updateAsmrtistCategories
 
 };
