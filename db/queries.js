@@ -84,6 +84,13 @@ async function associateAsmrtistWithCategory(categoryId, asmrtistId) {
     );
 }
 
+async function removeAsmrtistFromCategory(categoryId, asmrtistId) {
+    await pool.query(
+        "DELETE FROM category_asmrtists WHERE category_id = $1 AND asmrtist_id = $2",
+        [categoryId, asmrtistId]
+    );
+}
+
 module.exports = {
     getAllCategories,
     getAllAsmrtists,
@@ -98,5 +105,6 @@ module.exports = {
     getAsmrtistsByCategory,
     getCategoriesByAsmrtist,
     associateAsmrtistWithCategory,
+    removeAsmrtistFromCategory,
 
 };
