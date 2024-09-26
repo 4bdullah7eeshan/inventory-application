@@ -4,6 +4,7 @@ const indexRouter = require("./routes/indexRouter");
 const categoriesRouter = require("./routes/categoriesRouter");
 const methodOverride = require("method-override");
 const bodyParser = require('body-parser');
+const asmrtistsRouter = require("./routes/asmrtistsRouter");
 
 const app = express();
 const assetsPath = path.join(__dirname, "public");
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 app.use("/categories", categoriesRouter);
 app.use("categories/new", categoriesRouter);
+app.use("/asmrtists", asmrtistsRouter);
 
 
 
