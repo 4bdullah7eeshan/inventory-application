@@ -36,13 +36,8 @@ const updateCategory = asyncHandler(async (req, res) => {
     const categoryId = parseInt(req.params.id, 10); 
     const { name, description, image } = req.body; 
 
-    const updatedCategory = await db.updateCategory(categoryId, { name, description, image });
-
-    if (updatedCategory) {
-        res.redirect(`/categories/${categoryId}`);
-    } else {
-        res.status(404).send("Category not found or update failed.");
-    }
+    await db.updateCategory(categoryId, { name, description, image });
+    res.redirect(`/categories/${categoryId}`);
 });
 
 
