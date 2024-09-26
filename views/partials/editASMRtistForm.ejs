@@ -1,0 +1,18 @@
+<form method="POST" action="/asmrtists/<%= asmrtist.id %>/edit" class="edit-asmrtist-form">
+    <h2 class="text-center">Edit ASMRtist</h2>
+    
+    <div>
+        <label for="name">ASMRtist (required):</label>
+        <input type="text" id="name" name="name" placeholder="Made In France ASMR" style="width: 200px;" value="<%= asmrtist.name %>" required>
+    </div>
+    
+    <div>
+        <div>
+            <label for="yt_channel">YouTube Channel:</label>
+            <input type="url" id="yt_channel" name="yt_channel" placeholder="https://www.youtube.com/@MadeInFranceASMR" style="width: 350px;" value="<%= asmrtist.yt_channel %>">
+        </div>
+    </div>
+    <div class="new-category-form-submit-button text-center">
+        <button type="submit">Edit</button>
+    </div>
+</form>

@@ -158,7 +158,8 @@ footer {
 
 .new-category-form-container,
 .edit-category-form-container,
-.new-asmrtist-form-container {
+.new-asmrtist-form-container,
+.edit-asmrtist-form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,7 +168,8 @@ footer {
 
 .new-category-form,
 .edit-category-form,
-.new-asmrtist-form {
+.new-asmrtist-form,
+.edit-asmrtist-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
