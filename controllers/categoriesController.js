@@ -40,6 +40,12 @@ const updateCategory = asyncHandler(async (req, res) => {
     res.redirect(`/categories/${categoryId}`);
 });
 
+const deleteCategory = asyncHandler(async (req, res) => {
+    const categoryId = parseInt(req.params.id, 10); 
+    await db.deleteCategory(categoryId);
+    res.redirect("/categories");
+});
+
 
 module.exports = {
     getAllCategories,
@@ -48,4 +54,5 @@ module.exports = {
     getCategoryById,
     updateCategory,
     getUpdateCategory,
+    deleteCategory,
 };
