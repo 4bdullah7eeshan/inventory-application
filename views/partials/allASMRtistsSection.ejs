@@ -1,4 +1,4 @@
-<section class="all-asmrtists-table-container text-center">
+<section class="all-asmrtists-table-container text-center mt-3">
     <table class="table table-hover w-25">
         <thead>
             <tr>
@@ -8,7 +8,7 @@
         <tbody>
             <% asmrtists.forEach((asmrtist) => { %>
                 <tr>
-                    <td><%= asmrtist.name %></td>
+                    <td><a href="/asmrtists/<%= asmrtist.name %>"><%= asmrtist.name %></a></td>
                 </tr>
             <% }) %>
         </tbody>
