@@ -142,6 +142,13 @@ footer {
     outline: 1.5px solid black;
 }
 
+.new-category-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 
