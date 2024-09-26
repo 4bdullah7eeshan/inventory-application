@@ -26,9 +26,24 @@ const getCategoryById = asyncHandler(async (req, res) => {
     res.render("pages/category", { title: category.name, category: category });
 });
 
+const updateCategory = asyncHandler(async (req, res) => {
+    const categoryId = parseInt(req.params.id, 10); 
+    const { name, description, image } = req.body; 
+
+    const updatedCategory = await db.updateCategory(categoryId, { name, description, image });
+
+    if (updatedCategory) {
+        res.redirect(`/categories/${categoryId}`);
+    } else {
+        res.status(404).send("Category not found or update failed.");
+    }
+});
+
+
 module.exports = {
     getAllCategories,
     createNewCategory,
     getNewCategory,
-    getCategoryById
+    getCategoryById,
+    updateCategory,
 };
