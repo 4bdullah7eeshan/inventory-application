@@ -23,7 +23,9 @@ const createNewCategory = asyncHandler(async (req, res) => {
 const getCategoryById = asyncHandler(async (req, res) => {
     const categoryId = parseInt(req.params.id, 10); 
     const category = await db.getCategoryById(categoryId);
-    res.render("pages/category", { title: category.name, category: category });
+    const asmrtists = await db.getAsmrtistsByCategory(categoryId);
+
+    res.render("pages/category", { title: category.name, category, asmrtists });
 });
 
 const getUpdateCategory = asyncHandler(async (req, res) => {
