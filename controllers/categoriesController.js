@@ -12,6 +12,10 @@ const getNewCategory = asyncHandler(async (req, res) => {
 
 const createNewCategory = asyncHandler(async (req, res) => {
     const { name, description, image } = req.body;
+    console.log(req.body);
+    console.log(name);
+    console.log(description);
+    console.log(image);
     await db.insertNewCategory({ name: name, description: description, image: image });
     res.redirect("/categories");
 });

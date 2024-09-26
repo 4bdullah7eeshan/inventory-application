@@ -7,4 +7,6 @@ categoriesRouter.get("/", categoriesController.getAllCategories);
 
 categoriesRouter.get("/new", categoriesController.getNewCategory);
 
+categoriesRouter.post("/new", categoriesController.createNewCategory);
+
 module.exports = categoriesRouter;
