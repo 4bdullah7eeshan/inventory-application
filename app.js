@@ -3,16 +3,19 @@ const path = require("node:path");
 const indexRouter = require("./routes/indexRouter");
 const categoriesRouter = require("./routes/categoriesRouter");
 const methodOverride = require("method-override");
+const bodyParser = require('body-parser');
 
 const app = express();
+const assetsPath = path.join(__dirname, "public");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 
 app.use(methodOverride('_method'));
+app.use(bodyParser.json());
 
-const assetsPath = path.join(__dirname, "public");
+
 app.use(express.static(assetsPath));
 
 
