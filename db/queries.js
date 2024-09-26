@@ -77,6 +77,13 @@ async function getCategoriesByAsmrtist(asmrtistId) {
     return rows;
 }
 
+async function associateAsmrtistWithCategory(categoryId, asmrtistId) {
+    await pool.query(
+        "INSERT INTO category_asmrtists (category_id, asmrtist_id) VALUES ($1, $2) ON CONFLICT DO NOTHING",
+        [categoryId, asmrtistId]
+    );
+}
+
 module.exports = {
     getAllCategories,
     getAllAsmrtists,
@@ -90,5 +97,6 @@ module.exports = {
     deleteAsmrtist,
     getAsmrtistsByCategory,
     getCategoriesByAsmrtist,
+    associateAsmrtistWithCategory,
 
 };
