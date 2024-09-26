@@ -37,6 +37,11 @@ const updateASMRtist = asyncHandler(async (req, res) => {
     res.redirect(`/asmrtists/${asmrtistId}`);
 });
 
+const deleteAsmrtist = asyncHandler(async (req, res) => {
+    const asmrtistId = parseInt(req.params.id, 10); 
+    await db.deleteAsmrtist(asmrtistId);
+    res.redirect("/asmrtists");
+});
 
 
 module.exports = {
@@ -46,5 +51,6 @@ module.exports = {
     getASMRtistById,
     getUpdateASMRtist,
     updateASMRtist,
+    deleteAsmrtist,
     
 };
