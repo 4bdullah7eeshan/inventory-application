@@ -29,6 +29,14 @@ const getUpdateASMRtist = asyncHandler(async (req, res) => {
     res.render("pages/editASMRtist", { title: "Edit" + asmrtist.name, asmrtist: asmrtist });
 });
 
+const updateASMRtist = asyncHandler(async (req, res) => {
+    const asmrtistId = parseInt(req.params.id, 10); 
+    const { name, yt_channel } = req.body; 
+
+    await db.updateAsmrtist(asmrtistId, { name, yt_channel });
+    res.redirect(`/asmrtists/${asmrtistId}`);
+});
+
 
 
 module.exports = {
@@ -37,5 +45,6 @@ module.exports = {
     createNewASMRtist,
     getASMRtistById,
     getUpdateASMRtist,
+    updateASMRtist,
     
 };
