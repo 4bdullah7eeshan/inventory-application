@@ -157,6 +157,19 @@ footer {
     gap: 1.5rem;
 }
 
+.category-by-id {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.category-by-id img {
+    width: 20rem;
+    height: auto;
+}
+
 
 
 
