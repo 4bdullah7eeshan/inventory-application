@@ -23,11 +23,19 @@ const getASMRtistById = asyncHandler(async (req, res) => {
     res.render("pages/asmrtist", { title: asmrtist.name, asmrtist: asmrtist });
 });
 
+const getUpdateASMRtist = asyncHandler(async (req, res) => {
+    const asmrtistId = parseInt(req.params.id, 10); 
+    const asmrtist = await db.getAsmrtistById(asmrtistId);
+    res.render("pages/editASMRtist", { title: "Edit" + asmrtist.name, asmrtist: asmrtist });
+});
+
+
 
 module.exports = {
     getAllAsmrtists,
     getNewAsmrtist,
     createNewASMRtist,
     getASMRtistById,
+    getUpdateASMRtist,
     
 };
