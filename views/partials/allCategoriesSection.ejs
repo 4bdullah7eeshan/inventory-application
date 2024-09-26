@@ -1,18 +1,14 @@
-<section>
-    <h2>Categories</h2>
-    <div class="all-categories">
-        <% categories.forEach((category)=> { %>
-            <div class="category">
-                <div class="category-image">
-                    <img src="<%= category.image %>" alt="<%= category.name %>">
-                </div>
-                <div>
-                    <h3>
-                        <%= category.name %>
-                    </h3>
-                    <p>
-                        "<%= category.description %>"
-                    </p>
+<section class="container my-5">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-4">
+        <% categories.forEach((category) => { %>
+            <div class="col-6 h-100 d-flex justify-content-center align-items-center" style="width: 18rem;">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h3 class="card-title text-center"><%= category.name %></h3>
+                    </div>
+                    <a href="#" class="text-decoration-none">
+                        <img src="<%= category.image %>" class="img-fluid card-img-top" alt="<%= category.name %>" style="object-fit: cover; height: 10rem; width: auto;">
+                    </a>
                 </div>
             </div>
         <% }) %>

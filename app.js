@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require("node:path");
 const indexRouter = require("./routes/indexRouter");
+const categoriesRouter = require("./routes/categoriesRouter");
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.use(express.static(assetsPath));
 
 app.use(express.urlencoded({ extended: true }));
 app.use("/", indexRouter);
+app.use("/categories", categoriesRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Mini Message Board app running on port ${PORT}!`));
