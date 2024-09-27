@@ -9,34 +9,36 @@ CREATE TABLE IF NOT EXISTS categories (
    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
    name VARCHAR(255),
    description TEXT,
-   image TEXT
+   image TEXT,
+   is_protected BOOLEAN DEFAULT FALSE -- Column to protect initial categories
 );
 
-INSERT INTO categories (name, description, image)
+INSERT INTO categories (name, description, image, is_protected)
 VALUES
-('Sounds', 'Relaxing auditory experiences designed to stimulate the mind and soothe the body, ranging from soft whispers to tapping, crinkling, and nature sounds.', 'https://images.pexels.com/photos/6920063/pexels-photo-6920063.jpeg'),
-('Visuals', 'Carefully crafted visual triggers that aim to relax and captivate, including hand movements, close-up details, and calming light displays.', 'https://images.pexels.com/photos/5614145/pexels-photo-5614145.jpeg'),
-('Role-play', 'Immersive and creative role-play scenarios, providing personal attention to the viewer with themes like spa visits, doctors, or friendly interactions.', 'https://images.pexels.com/photos/28572658/pexels-photo-28572658/free-photo-of-dramatic-dark-fantasy-portrait-with-horns.jpeg'),
-('Eating', 'Soft and subtle eating sounds, featuring chewing, sipping, and crunching noises that offer calming, rhythmic stimulation.', 'https://images.pexels.com/photos/2383305/pexels-photo-2383305.jpeg'),
-('Crushing', 'The sound and sight of objects being crushed, including soft materials, crispy textures, and satisfying destruction, all captured in vivid detail.', 'https://images.pexels.com/photos/5701082/pexels-photo-5701082.jpeg'),
-('Tactile', 'Focuses on tactile sensations, including tapping, scratching, and soft touch triggers that encourage a sense of calm and comfort.', 'https://images.pexels.com/photos/7505006/pexels-photo-7505006.jpeg');
+('Sounds', 'Relaxing auditory experiences designed to stimulate the mind and soothe the body, ranging from soft whispers to tapping, crinkling, and nature sounds.', 'https://images.pexels.com/photos/6920063/pexels-photo-6920063.jpeg', TRUE),
+('Visuals', 'Carefully crafted visual triggers that aim to relax and captivate, including hand movements, close-up details, and calming light displays.', 'https://images.pexels.com/photos/5614145/pexels-photo-5614145.jpeg', TRUE),
+('Role-play', 'Immersive and creative role-play scenarios, providing personal attention to the viewer with themes like spa visits, doctors, or friendly interactions.', 'https://images.pexels.com/photos/28572658/pexels-photo-28572658/free-photo-of-dramatic-dark-fantasy-portrait-with-horns.jpeg', TRUE),
+('Eating', 'Soft and subtle eating sounds, featuring chewing, sipping, and crunching noises that offer calming, rhythmic stimulation.', 'https://images.pexels.com/photos/2383305/pexels-photo-2383305.jpeg', TRUE),
+('Crushing', 'The sound and sight of objects being crushed, including soft materials, crispy textures, and satisfying destruction, all captured in vivid detail.', 'https://images.pexels.com/photos/5701082/pexels-photo-5701082.jpeg', TRUE),
+('Tactile', 'Focuses on tactile sensations, including tapping, scratching, and soft touch triggers that encourage a sense of calm and comfort.', 'https://images.pexels.com/photos/7505006/pexels-photo-7505006.jpeg', TRUE);
 
 -- asmrtists table
 CREATE TABLE IF NOT EXISTS asmrtists (
    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
    name VARCHAR(255) NOT NULL,
-   yt_channel TEXT
+   yt_channel TEXT,
+   is_protected BOOLEAN DEFAULT FALSE -- Column to protect initial asmrtists
 );
 
-INSERT INTO asmrtists (name, yt_channel)
+INSERT INTO asmrtists (name, yt_channel, is_protected)
 VALUES
-('Articulate Design', 'https://www.youtube.com/@ArticulateDesignASMR'),
-('Zeitgeist', 'https://www.youtube.com/@asmrzeitgeist'),
-('Ephemeral Rift', 'https://www.youtube.com/@EphemeralRift'),
-('Coroma Sara', 'https://www.youtube.com/@CoromoSaraASMR'),
-('Gibi', 'https://www.youtube.com/@GibiASMR'),
-('Tiny Hands', 'https://www.youtube.com/@tinyhandsASMR'),
-('Zach', 'https://www.youtube.com/@ZachChoi');
+('Articulate Design', 'https://www.youtube.com/@ArticulateDesignASMR', TRUE),
+('Zeitgeist', 'https://www.youtube.com/@asmrzeitgeist', TRUE),
+('Ephemeral Rift', 'https://www.youtube.com/@EphemeralRift', TRUE),
+('Coroma Sara', 'https://www.youtube.com/@CoromoSaraASMR', TRUE),
+('Gibi', 'https://www.youtube.com/@GibiASMR', TRUE),
+('Tiny Hands', 'https://www.youtube.com/@tinyhandsASMR', TRUE),
+('Zach', 'https://www.youtube.com/@ZachChoi', TRUE);
 
 -- category_asmrtists table
 CREATE TABLE IF NOT EXISTS category_asmrtists (
