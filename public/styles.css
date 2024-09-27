@@ -131,6 +131,12 @@ footer {
     color: white;
 }
 
+footer a {
+    color: white;
+}
+
+
+
 .card-body {
     background-color: black;
     color: white;
