@@ -20,20 +20,32 @@ const createNewASMRtist = asyncHandler(async (req, res) => {
 const getASMRtistById = asyncHandler(async (req, res) => {
     const asmrtistId = parseInt(req.params.id, 10); 
     const asmrtist = await db.getAsmrtistById(asmrtistId);
-    res.render("pages/asmrtist", { title: asmrtist.name, asmrtist: asmrtist });
+    const categories = await db.getCategoriesByAsmrtist(asmrtistId);
+
+    res.render("pages/asmrtist", { title: asmrtist.name, asmrtist, categories });
+
 });
 
 const getUpdateASMRtist = asyncHandler(async (req, res) => {
-    const asmrtistId = parseInt(req.params.id, 10); 
+    const asmrtistId = parseInt(req.params.id, 10);
     const asmrtist = await db.getAsmrtistById(asmrtistId);
-    res.render("pages/editASMRtist", { title: "Edit" + asmrtist.name, asmrtist: asmrtist });
+    const associatedCategories = await db.getCategoriesByAsmrtist(asmrtistId); 
+    const allCategories = await db.getAllCategories(); 
+    res.render("pages/editASMRtist", { 
+        title: "Edit " + asmrtist.name, 
+        asmrtist, 
+        associatedCategories, 
+        allCategories 
+    });
 });
 
 const updateASMRtist = asyncHandler(async (req, res) => {
-    const asmrtistId = parseInt(req.params.id, 10); 
-    const { name, yt_channel } = req.body; 
+    const asmrtistId = parseInt(req.params.id, 10);
+    const { name, yt_channel, selectedCategories } = req.body; 
 
     await db.updateAsmrtist(asmrtistId, { name, yt_channel });
+    await db.updateAsmrtistCategories(asmrtistId, selectedCategories);
+
     res.redirect(`/asmrtists/${asmrtistId}`);
 });
 
