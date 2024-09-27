@@ -12,6 +12,25 @@
             <input type="url" id="yt_channel" name="yt_channel" placeholder="https://www.youtube.com/@MadeInFranceASMR" style="width: 350px;">
         </div>
     </div>
+
+    <div>
+        <p>Associate Categories:</p>
+        <p>Currently, the following categories exist in your inventory.</p>
+        <ul>
+            <% allCategories.forEach(category => { %>
+                <li>
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            name="selectedCategories[]" 
+                            value="<%= category.id %>"
+                        />
+                        <%= category.name %>
+                    </label>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
     
     <div class="new-asmrtist-form-submit-button text-center">
         <button type="submit">Add</button>

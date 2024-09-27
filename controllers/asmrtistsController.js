@@ -10,13 +10,24 @@ const getAllAsmrtists = asyncHandler(async (req, res) => {
 });
 
 const getNewAsmrtist = asyncHandler(async (req, res) => {
-    res.render("pages/newASMRtist", { title: "New ASMRtist" });
+    const allCategories = await db.getAllCategories();
+    res.render("pages/newASMRtist", { title: "New ASMRtist", allCategories });
 });
 
 const createNewASMRtist = asyncHandler(async (req, res) => {
-    const { name, yt_channel } = req.body;
+    const { name, yt_channel, selectedCategories } = req.body;
     console.log(req.body);
-    await db.insertNewAsmrtist({ name: name, yt_channel: yt_channel });
+    const newAsmrtist = await db.insertNewAsmrtist({ name: name, yt_channel: yt_channel });
+    
+    if (selectedCategories && selectedCategories.length > 0) {
+        const categoriesIds = Array.isArray(selectedCategories) ? selectedCategories : [selectedCategories];
+        const associationPromises = categoriesIds.map(categoryId => {
+            return db.associateAsmrtistWithCategory(categoryId, newAsmrtist.id);
+        });
+
+        await Promise.all(associationPromises);
+    }
+
     res.redirect("/asmrtists");
 });
 

@@ -17,7 +17,8 @@ async function insertNewCategory({ name, description, image }) {
 };
 
 async function insertNewAsmrtist({ name, yt_channel }) {
-    await pool.query("INSERT INTO asmrtists (name, yt_channel) VALUES ($1, $2)", [name, yt_channel]);
+    const { rows } =await pool.query("INSERT INTO asmrtists (name, yt_channel) VALUES ($1, $2) RETURNING *", [name, yt_channel]);
+    return rows[0];
 };
   
 async function getCategoryById(id) {
