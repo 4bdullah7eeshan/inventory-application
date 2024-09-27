@@ -65,7 +65,9 @@ const updateCategory = asyncHandler(async (req, res) => {
 const getDeleteCategory = asyncHandler(async (req, res) => {
     const categoryId = parseInt(req.params.id, 10);
     const category = await db.getCategoryById(categoryId);
-    res.render("pages/deleteCategory", { title: `Delete "${category.name}" Category?`, category: category});
+    const asmrtists = await db.getAsmrtistsByCategory(categoryId);
+
+    res.render("pages/deleteCategory", { title: `Delete "${category.name}" Category?`, category: category, asmrtists});
 
 })
 
