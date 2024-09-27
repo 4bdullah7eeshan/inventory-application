@@ -66,6 +66,13 @@ const updateASMRtist = asyncHandler(async (req, res) => {
     res.redirect(`/asmrtists/${asmrtistId}`);
 });
 
+const getDeleteAsmrtist = asyncHandler(async (req, res) => {
+    const asmrtistId = parseInt(req.params.id, 10);
+    const asmrtist = await db.getAsmrtistById(asmrtistId);
+    res.render("pages/deleteASMRtist", { title: "Edit" + asmrtist.name, asmrtist: asmrtist});
+
+})
+
 const deleteAsmrtist = asyncHandler(async (req, res) => {
     const asmrtistId = parseInt(req.params.id, 10); 
     const { adminPasswordInput } = req.body;
@@ -91,4 +98,5 @@ module.exports = {
     getUpdateASMRtist,
     updateASMRtist,
     deleteAsmrtist,
+    getDeleteAsmrtist,
 };
