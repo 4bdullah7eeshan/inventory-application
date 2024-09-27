@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('../partials/head') %>
+<%- include('../partials/head') %>
+
     <body>
         <%- include('../partials/nav') %>
-        <main class="categories-page">
-            <header>
-                <h2 class="text-center">All Categories</h2>
-            </header>
-            <div class="add-new-category text-center">
-                <a href="categories/new">Add</a>
-            </div>
-            <%- include('../partials/allCategoriesSection') %>
-        </main>
-        <%- include('../partials/footer') %>
+            <main class="categories-page">
+                <header>
+                    <h2 class="text-center">All Categories</h2>
+                </header>
+                <div class="add-new-category text-center">
+                    <a href="categories/new">Add</a>
+                </div>
+                <%- include('../partials/allCategoriesSection') %>
+            </main>
+            <%- include('../partials/footer') %>
     </body>
+
 </html>

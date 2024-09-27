@@ -1,29 +1,32 @@
 <section class="category-by-id">
-    <h2><%= category.name %></h2>
-    <div>
-        <img src="<%= category.image %>" alt="<%= category.name %>">
-    </div>
-    <h3>Description</h3>
-    <p><%= category.description %></p>
-    <h3>Associated ASMRtists</h3>
-    <p>The following ASMRtist(s) adopt this style of ASMR:</p>
-    <ul>
-        <% asmrtists.forEach(asmrtist => { %>
-            <li><a href="/asmrtists/<%=asmrtist.id %>"><%= asmrtist.name %></a></li>
-        <% }) %>
-    </ul>
-    <h3 class="text-center">Manage</h3>
-    <p>Edit or delete this category.</p>
-    <div class="category-manage-buttons">
-        <span class="edit-category-button text-center">
-            <a href="/categories/<%= category.id %>/edit"><i class="fa-solid fa-pen"></i></a>
-        </span>
-        <span class="delete-category-button text-center">
-            <a href="/categories/<%= category.id %>/delete"><i class="fa-solid fa-trash"></i></a>
-        </span>
-    </div>
-    
-    
-
-    
+  <h2><%= category.name %></h2>
+  <div>
+    <img
+      src="<%= category.image %>"
+      alt="<%= category.name %>"
+    />
+  </div>
+  <h3>Description</h3>
+  <p><%= category.description %></p>
+  <h3>Associated ASMRtists</h3>
+  <p>The following ASMRtist(s) adopt this style of ASMR:</p>
+  <ul>
+    <% asmrtists.forEach(asmrtist=> { %>
+    <li><a href="/asmrtists/<%=asmrtist.id %>"> <%= asmrtist.name %> </a></li>
+    <% }) %>
+  </ul>
+  <h3 class="text-center">Manage</h3>
+  <p>Edit or delete this category.</p>
+  <div class="category-manage-buttons">
+    <span class="edit-category-button text-center">
+      <a href="/categories/<%= category.id %>/edit"
+        ><i class="fa-solid fa-pen"></i
+      ></a>
+    </span>
+    <span class="delete-category-button text-center">
+      <a href="/categories/<%= category.id %>/delete"
+        ><i class="fa-solid fa-trash"></i
+      ></a>
+    </span>
+  </div>
 </section>

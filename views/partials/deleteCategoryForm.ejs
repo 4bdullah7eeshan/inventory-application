@@ -1,27 +1,41 @@
-<form action="/categories/<%= category.id %>/delete" method="POST" class="delete-category-form">
-    <h2 class="text-center"><%= title %></h2>
-    <p class="text-center"><strong>This action can not reverted back!</strong></p>
+<form
+  action="/categories/<%= category.id %>/delete"
+  method="POST"
+  class="delete-category-form"
+>
+  <h2 class="text-center"><%= title %></h2>
+  <p class="text-center"><strong>This action can not reverted back!</strong></p>
 
-    <div class="lift">
-        <h3>Summary</h3>
-        <p>The following ASMRtist(s) are associated with <%= category.name %>:</p>
-        <ul>
-            <% asmrtists.forEach(asmrtist => { %>
-                <li><a href="/asmrtists/<%= asmrtist.id %>"><%= asmrtist.name %></a></li>
-            <% }) %>
-        </ul>
-        <p>These will <em>not</em> be deleted, however the associations will fease to exist.</p>
-    </div>
+  <div class="lift">
+    <h3>Summary</h3>
+    <p>The following ASMRtist(s) are associated with <%= category.name %>:</p>
+    <ul>
+      <% asmrtists.forEach(asmrtist => { %>
+      <li><a href="/asmrtists/<%= asmrtist.id %>"><%= asmrtist.name %></a></li>
+      <% }) %>
+    </ul>
+    <p>
+      These will <em>not</em> be deleted, however the associations will fease to
+      exist.
+    </p>
+  </div>
 
-    <% if (category.protected) { %>
-        <div class="lift">
-            <h3>Note</h3>
-            <p>The category "<%= category.name %>" is protected by admin. If you are the admin, please enter the password below.</p>
-            <label for="adminPasswordInput">Admin Password:</label>
-            <input type="password" name="adminPasswordInput" required />
-        </div>
-    <% } %>
-    <div class="new-category-form-submit-button">
-        <button type="submit">Delete</button>
-    </div>
+  <% if (category.protected) { %>
+  <div class="lift">
+    <h3>Note</h3>
+    <p>
+      The category "<%= category.name %>" is protected by admin. If you are the
+      admin, please enter the password below.
+    </p>
+    <label for="adminPasswordInput">Admin Password:</label>
+    <input
+      type="password"
+      name="adminPasswordInput"
+      required
+    />
+  </div>
+  <% } %>
+  <div class="new-category-form-submit-button">
+    <button type="submit">Delete</button>
+  </div>
 </form>

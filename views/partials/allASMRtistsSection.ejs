@@ -6,11 +6,15 @@
             </tr>
         </thead>
         <tbody>
-            <% asmrtists.forEach((asmrtist) => { %>
+            <% asmrtists.forEach((asmrtist)=> { %>
                 <tr>
-                    <td><a href="/asmrtists/<%= asmrtist.id %>"><%= asmrtist.name %></a></td>
+                    <td>
+                        <a href="/asmrtists/<%= asmrtist.id %>">
+                            <%= asmrtist.name %>
+                        </a>
+                    </td>
                 </tr>
-            <% }) %>
+                <% }) %>
         </tbody>
     </table>
 </section>

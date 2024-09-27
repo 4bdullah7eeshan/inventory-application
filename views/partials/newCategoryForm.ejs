@@ -1,46 +1,68 @@
-<form method="POST" action="/categories/new" class="new-category-form">
-    <h2 class="text-center">New Category</h2>
-    
-    <div class="lift">
-        <label for="name">Category (required):</label>
-        <input type="text" id="name" name="name" placeholder="Nature Sounds" required>
-    </div>
-    
-    <div class="lift">
-        <div>
-            <label for="description">Description (optional):</label>
-        </div>
-        <div>
-            <textarea type="text" id="description" name="description" placeholder="Natural ambient sounds such as leaves rustling, wind blowing, or birds chirping" rows="5" cols="50"></textarea>
-    
-        </div>
-    </div>
-    
-    <div class="lift">
-        <label for="image">Image URL (optional):</label>
-        <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" style="width: 230px;">
-    </div>
+<form
+  method="POST"
+  action="/categories/new"
+  class="new-category-form"
+>
+  <h2 class="text-center">New Category</h2>
 
-    <div class="lift">
-        <p>Associate ASMRtists (optional)</p>
-        <p>Currently, the following ASMRTists exist in your inventory:</p>
-        <ul>
-            <% allAsmrtists.forEach(asmrtist => { %>
-                <li>
-                    <label>
-                        <input 
-                            type="checkbox" 
-                            name="selectedAsmrtists[]" 
-                            value="<%= asmrtist.id %>"
-                        />
-                        <%= asmrtist.name %>
-                    </label>
-                </li>
-            <% }) %>
-        </ul>
+  <div class="lift">
+    <label for="name">Category (required):</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Nature Sounds"
+      required
+    />
+  </div>
+
+  <div class="lift">
+    <div>
+      <label for="description">Description (optional):</label>
     </div>
-    
-    <div class="new-category-form-submit-button text-center">
-        <button type="submit">Create</button>
+    <div>
+      <textarea
+        type="text"
+        id="description"
+        name="description"
+        placeholder="Natural ambient sounds such as leaves rustling, wind blowing, or birds chirping"
+        rows="5"
+        cols="50"
+      ></textarea>
     </div>
+  </div>
+
+  <div class="lift">
+    <label for="image">Image URL (optional):</label>
+    <input
+      type="url"
+      id="image"
+      name="image"
+      placeholder="https://example.com/image.jpg"
+      style="width: 230px"
+    />
+  </div>
+
+  <div class="lift">
+    <p>Associate ASMRtists (optional)</p>
+    <p>Currently, the following ASMRTists exist in your inventory:</p>
+    <ul>
+      <% allAsmrtists.forEach(asmrtist => { %>
+      <li>
+        <label>
+          <input
+            type="checkbox"
+            name="selectedAsmrtists[]"
+            value="<%= asmrtist.id %>"
+          />
+          <%= asmrtist.name %>
+        </label>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+
+  <div class="new-category-form-submit-button text-center">
+    <button type="submit">Create</button>
+  </div>
 </form>

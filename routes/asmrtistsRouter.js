@@ -19,5 +19,4 @@ asmrtistsRouter.get("/:id/delete", asmrtistsController.getDeleteAsmrtist);
 
 asmrtistsRouter.post("/:id/delete", asmrtistsController.deleteAsmrtist);
 
-
 module.exports = asmrtistsRouter;

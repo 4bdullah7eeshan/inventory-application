@@ -1,47 +1,51 @@
-/* reset.css
-   Generic reset and a template
-*/
-@import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+/* reset.css */
 
-
-
+@import url("https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Belleza&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Belleza', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Belleza", sans-serif;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Viaoda Libre', serif;
-}
-
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-    background-color: #e7d7fb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  background-color: #e7d7fb;
 }
 
+main {
+  flex-grow: 1;
+  padding: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Viaoda Libre", serif;
+}
 
 nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: black;
-    color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: black;
+  color: white;
 }
 
 .home nav {
-    background-color: transparent;
-    color: black;
+  background-color: transparent;
+  color: black;
 }
 
 .nav-link a,
@@ -54,14 +58,13 @@ nav {
 .new-asmrtist-form-submit-button button,
 .edit-asmrtist-button a,
 .delete-asmrtist-button a {
-    font-family: 'Viaoda Libre', serif;
-    text-decoration: none;
-    color: white;
-    outline: 1px solid white;
-    background-color: #7c5797;
-    padding: 0.5rem;
+  font-family: "Viaoda Libre", serif;
+  text-decoration: none;
+  color: white;
+  outline: 1px solid white;
+  background-color: #7c5797;
+  padding: 0.5rem;
 }
-
 
 .nav-link a:hover,
 .category-view-button button:hover,
@@ -73,25 +76,24 @@ nav {
 .new-asmrtist-form-submit-button button:hover,
 .edit-asmrtist-button a:hover,
 .delete-asmrtist-button a:hover {
-    background-color: #d6b0c0;
-    color: black;
-    outline: 1px solid black;
+  background-color: #d6b0c0;
+  color: black;
+  outline: 1px solid black;
 }
 
 .home .logo a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .logo a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
-
 nav p {
-    font-family: 'Petit Formal Script', cursive;
-    font-size: 2.5rem;
+  font-family: "Petit Formal Script", cursive;
+  font-size: 2.5rem;
 }
 
 h1,
@@ -100,83 +102,75 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Viaoda Libre', cursive;   
-}
-
-main {
-    flex-grow: 1;
-    padding: 1.5rem;
+  font-family: "Viaoda Libre", cursive;
 }
 
 .home {
-    display: flex;
-    background-image: url("https://cdn.pixabay.com/animation/2023/01/26/05/20/05-20-36-559_512.gif");
-    background-size: cover;
-    background-position: center;
-    justify-content: flex-start;
-    align-items: stretch;
-    color: black;
-    text-align: center;
-    padding: 1rem;
-    height: 100%;
+  display: flex;
+  background-image: url("https://cdn.pixabay.com/animation/2023/01/26/05/20/05-20-36-559_512.gif");
+  background-size: cover;
+  background-position: center;
+  justify-content: flex-start;
+  align-items: stretch;
+  color: black;
+  text-align: center;
+  padding: 1rem;
+  height: 100%;
 }
 
 .about p {
-    font-size: 1.25rem;
-    font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    outline: 1px solid black; /* Change it as needed */
-    background-color: black;
-    color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  outline: 1px solid black; /* Change it as needed */
+  background-color: black;
+  color: white;
 }
 
 footer a {
-    color: white;
+  color: white;
 }
 
-
-
 .card-body {
-    background-color: black;
-    color: white;
-    outline: 1px solid white;
+  background-color: black;
+  color: white;
+  outline: 1px solid white;
 }
 
 .category-image {
-    outline: 1px solid white;
+  outline: 1px solid white;
 }
 
 .category-view-button {
-    padding: 0.5rem;
-    background-color: black;
-    outline: 1px solid white;
-
+  padding: 0.5rem;
+  background-color: black;
+  outline: 1px solid white;
 }
 
 .add-new-category,
 .add-new-asmrtist {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .card {
-    outline: 1.5px solid black;
+  outline: 1.5px solid black;
 }
 
 .new-category-form-container,
 .edit-category-form-container,
 .new-asmrtist-form-container,
 .edit-asmrtist-form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .new-category-form,
@@ -185,91 +179,84 @@ footer a {
 .edit-asmrtist-form,
 .delete-category-form,
 .delete-asmrtist-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .new-category-form ul,
 .edit-category-form ul,
 .new-asmrtist-form ul,
 .edit-asmrtist-form ul {
-    list-style: none;
+  list-style: none;
 }
 
 .category-by-id,
 .asmrtist-by-id {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .lift {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .category-by-id img {
-    width: 25rem;
-    height: auto;
+  width: 25rem;
+  height: auto;
 }
 
 .category-by-id ul li a,
 .asmrtist-by-id ul li a,
 .delete-asmrtist-form ul li a,
 .delete-category-form ul li a {
-    color: #7c5797;
+  color: #7c5797;
 }
 
 table {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 table a {
-    color: black;
+  color: black;
 }
 
 .category-manage-buttons,
 .asmrtist-manage-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .edit-category-button a,
 .delete-category-button a,
 .edit-asmrtist-button a,
 .delete-asmrtist-button a {
-    width: 1rem;
-    height: auto;
+  width: 1rem;
+  height: auto;
 }
 
-
-
-
-
 .all-asmrtists-table-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 table {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 .asmrtist-by-id h3 i {
-    color: red;
+  color: red;
 }
-
-
-

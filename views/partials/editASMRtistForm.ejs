@@ -1,47 +1,67 @@
-<form method="POST" action="/asmrtists/<%= asmrtist.id %>/edit" class="edit-asmrtist-form">
-    <h2 class="text-center"><%= title %></h2>
-    
-    <div class="lift">
-        <label for="name">ASMRtist (required):</label>
-        <input type="text" id="name" name="name" placeholder="Made In France ASMR" style="width: 200px;" value="<%= asmrtist.name %>" required>
-    </div>
-    
-    <div class="lift">
-        
-        <label for="yt_channel">YouTube Channel:</label>
-        <input type="url" id="yt_channel" name="yt_channel" placeholder="https://www.youtube.com/@MadeInFranceASMR" style="width: 350px;" value="<%= asmrtist.yt_channel %>">
-        
-    </div>
+<form
+  method="POST"
+  action="/asmrtists/<%= asmrtist.id %>/edit"
+  class="edit-asmrtist-form"
+>
+  <h2 class="text-center"><%= title %></h2>
 
-    <div class="lift">
-        <h3>Associated Categories:</h3>
-        <ul>
-            <% allCategories.forEach(category => { %>
-                <li>
-                    <label>
-                        <input 
-                            type="checkbox" 
-                            name="selectedCategories" 
-                            value="<%= category.id %>" 
-                            <% if (associatedCategories.some(c => c.id === category.id)) { %> checked <% } %>
-                        />
-                        <%= category.name %>
-                    </label>
-                </li>
-            <% }) %>
-        </ul>
-    </div>
+  <div class="lift">
+    <label for="name">ASMRtist (required):</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Made In France ASMR"
+      style="width: 200px"
+      value="<%= asmrtist.name %>"
+      required
+    />
+  </div>
 
-    <% if (asmrtist.protected) { %>
-        <div class="lift">
-            <h3>Note</h3>
-            <p>The ASMRtist "<%= asmrtist.name %>" is protected by admin. If you are the admin, please enter the password below.</p>
-            <label for="adminPasswordInput">Admin Password:</label>
-            <input type="password" name="adminPasswordInput" required />
-        </div>
-    <% } %>
+  <div class="lift">
+    <label for="yt_channel">YouTube Channel:</label>
+    <input
+      type="url"
+      id="yt_channel"
+      name="yt_channel"
+      placeholder="https://www.youtube.com/@MadeInFranceASMR"
+      style="width: 350px"
+      value="<%= asmrtist.yt_channel %>"
+    />
+  </div>
 
-    <div class="new-category-form-submit-button text-center">
-        <button type="submit">Edit</button>
-    </div>
+  <div class="lift">
+    <h3>Associated Categories:</h3>
+    <ul>
+      <% allCategories.forEach(category => { %>
+      <li>
+        <label>
+          <input type="checkbox" name="selectedCategories" value="<%=
+          category.id %>" <% if (associatedCategories.some(c => c.id ===
+          category.id)) { %> checked <% } %> /> <%= category.name %>
+        </label>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+
+  <% if (asmrtist.protected) { %>
+  <div class="lift">
+    <h3>Note</h3>
+    <p>
+      The ASMRtist "<%= asmrtist.name %>" is protected by admin. If you are the
+      admin, please enter the password below.
+    </p>
+    <label for="adminPasswordInput">Admin Password:</label>
+    <input
+      type="password"
+      name="adminPasswordInput"
+      required
+    />
+  </div>
+  <% } %>
+
+  <div class="new-category-form-submit-button text-center">
+    <button type="submit">Edit</button>
+  </div>
 </form>
