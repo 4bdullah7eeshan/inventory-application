@@ -183,6 +183,13 @@ footer a {
     gap: 1.5rem;
 }
 
+.new-category-form ul,
+.edit-category-form ul,
+.new-asmrtist-form ul,
+.edit-asmrtist-form ul {
+    list-style: none;
+}
+
 .category-by-id,
 .asmrtist-by-id {
     display: flex;
@@ -191,6 +198,13 @@ footer a {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
+}
+
+.lift {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .category-by-id img {

@@ -1,5 +1,5 @@
 <form method="POST" action="/asmrtists/<%= asmrtist.id %>/edit" class="edit-asmrtist-form">
-    <h2 class="text-center">Edit ASMRtist</h2>
+    <h2 class="text-center"><%= title %></h2>
     
     <div>
         <label for="name">ASMRtist (required):</label>
@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <div>
+    <div class="lift">
         <h3>Associated Categories:</h3>
         <ul>
             <% allCategories.forEach(category => { %>
@@ -30,12 +30,15 @@
                 </li>
             <% }) %>
         </ul>
-
     </div>
 
-    <% if (category.protected) { %>
-        <label for="adminPasswordInput">Admin Password:</label>
-        <input type="password" name="adminPasswordInput" required />
+    <% if (asmrtist.protected) { %>
+        <div class="lift">
+            <h5>Note:</h5>
+            <p>The ASMRtist "<%= asmrtist.name %>" is protected by admin. If you are the admin, please enter the password below.</p>
+            <label for="adminPasswordInput">Admin Password:</label>
+            <input type="password" name="adminPasswordInput" required />
+        </div>
     <% } %>
 
     <div class="new-category-form-submit-button text-center">

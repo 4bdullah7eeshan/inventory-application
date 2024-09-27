@@ -21,7 +21,7 @@
         <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" style="width: 230px;" value="<%= category.image %>">
     </div>
 
-    <div>
+    <div class="lift"> 
         <h5>Associated ASMRtists:</h5>
         <ul>
             <% allAsmrtists.forEach(asmrtist => { %>
@@ -38,14 +38,15 @@
                 </li>
             <% }) %>
         </ul>
-
     </div>
 
     <% if (category.protected) { %>
-        <h5>Note:</h5>
-        <p>The category "<%= category.name %>" is protected by admin. If you are the admin, please enter the password below.</p>
-        <label for="adminPasswordInput">Admin Password:</label>
-        <input type="password" name="adminPasswordInput" required />
+        <div class="lift">
+            <h5>Note:</h5>
+            <p>The category "<%= category.name %>" is protected by admin. If you are the admin, please enter the password below.</p>
+            <label for="adminPasswordInput">Admin Password:</label>
+            <input type="password" name="adminPasswordInput" required />
+        </div>
     <% } %>
     
     <div class="new-category-form-submit-button text-center">
