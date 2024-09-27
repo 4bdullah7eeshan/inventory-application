@@ -10,10 +10,10 @@ CREATE TABLE IF NOT EXISTS categories (
    name VARCHAR(255),
    description TEXT,
    image TEXT,
-   is_protected BOOLEAN DEFAULT FALSE -- Column to protect initial categories
+   protected BOOLEAN DEFAULT FALSE -- Column to protect initial categories
 );
 
-INSERT INTO categories (name, description, image, is_protected)
+INSERT INTO categories (name, description, image, protected)
 VALUES
 ('Sounds', 'Relaxing auditory experiences designed to stimulate the mind and soothe the body, ranging from soft whispers to tapping, crinkling, and nature sounds.', 'https://images.pexels.com/photos/6920063/pexels-photo-6920063.jpeg', TRUE),
 ('Visuals', 'Carefully crafted visual triggers that aim to relax and captivate, including hand movements, close-up details, and calming light displays.', 'https://images.pexels.com/photos/5614145/pexels-photo-5614145.jpeg', TRUE),
@@ -27,10 +27,10 @@ CREATE TABLE IF NOT EXISTS asmrtists (
    id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
    name VARCHAR(255) NOT NULL,
    yt_channel TEXT,
-   is_protected BOOLEAN DEFAULT FALSE -- Column to protect initial asmrtists
+   protected BOOLEAN DEFAULT FALSE -- Column to protect initial asmrtists
 );
 
-INSERT INTO asmrtists (name, yt_channel, is_protected)
+INSERT INTO asmrtists (name, yt_channel, protected)
 VALUES
 ('Articulate Design', 'https://www.youtube.com/@ArticulateDesignASMR', TRUE),
 ('Zeitgeist', 'https://www.youtube.com/@asmrzeitgeist', TRUE),
