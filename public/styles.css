@@ -200,6 +200,10 @@ footer a {
     color: #7c5797;
 }
 
+table a {
+    color: black;
+}
+
 .category-manage-buttons,
 .asmrtist-manage-buttons {
     display: flex;
@@ -223,6 +227,10 @@ footer a {
     align-items: center;
 }
 
+table {
+    background-color: black;
+    color: white;
+}
 
 
 
