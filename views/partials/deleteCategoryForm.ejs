@@ -1,0 +1,8 @@
+<form action="/categories/<%= category.id %>/delete" method="POST">
+    <% if (category.protected) { %> 
+        <label for="adminPasswordInput">Admin Password:</label>
+        <input type="password" name="adminPasswordInput" required />
+    <% } %>
+
+    <button type="submit">Confirm Delete</button>
+</form>

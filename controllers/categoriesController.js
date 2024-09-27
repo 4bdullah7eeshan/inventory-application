@@ -1,5 +1,8 @@
 const db = require("../db/queries");
 const asyncHandler = require("express-async-handler");
+require('dotenv').config();
+
+const adminPassword = process.env.ADMIN_PASSWORD;
 
 const getAllCategories = asyncHandler(async (req, res) => {
     const categories = await db.getAllCategories();
@@ -38,7 +41,15 @@ const getUpdateCategory = asyncHandler(async (req, res) => {
 
 const updateCategory = asyncHandler(async (req, res) => {
     const categoryId = parseInt(req.params.id, 10);
-    const { name, description, image } = req.body;
+    const { name, description, image, adminPasswordInput } = req.body;
+    const category = await db.getCategoryById(categoryId);
+
+    if (category.protected) {
+        if (adminPasswordInput !== adminPassword) {
+            return res.status(403).send('Admin password required for editing protected categories');
+        }
+    }
+
     let selectedAsmrtists = req.body.selectedAsmrtists;
 
     if (!Array.isArray(selectedAsmrtists)) {
@@ -51,8 +62,24 @@ const updateCategory = asyncHandler(async (req, res) => {
     res.redirect(`/categories/${categoryId}`);
 });
 
+const getDeleteCategory = asyncHandler(async (req, res) => {
+    const categoryId = parseInt(req.params.id, 10);
+    const category = await db.getCategoryById(categoryId);
+    res.render("pages/deleteCategory", { title: "Edit" + category.name, category: category});
+
+})
+
 const deleteCategory = asyncHandler(async (req, res) => {
-    const categoryId = parseInt(req.params.id, 10); 
+    const categoryId = parseInt(req.params.id, 10);
+    const { adminPasswordInput } = req.body;
+    const category = await db.getCategoryById(categoryId);
+
+    if (category.protected) {
+        if (adminPasswordInput !== adminPassword) {
+            return res.status(403).send('Admin password required for deleting protected categories');
+        }
+    }
+
     await db.deleteCategory(categoryId);
     res.redirect("/categories");
 });
@@ -66,4 +93,5 @@ module.exports = {
     updateCategory,
     getUpdateCategory,
     deleteCategory,
+    getDeleteCategory
 };

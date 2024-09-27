@@ -1,5 +1,8 @@
 const db = require("../db/queries");
 const asyncHandler = require("express-async-handler");
+require('dotenv').config();
+
+const adminPassword = process.env.ADMIN_PASSWORD;
 
 const getAllAsmrtists = asyncHandler(async (req, res) => {
     const asmrtists = await db.getAllAsmrtists();
@@ -41,7 +44,16 @@ const getUpdateASMRtist = asyncHandler(async (req, res) => {
 
 const updateASMRtist = asyncHandler(async (req, res) => {
     const asmrtistId = parseInt(req.params.id, 10);
-    const { name, yt_channel } = req.body;
+    const { name, yt_channel, adminPasswordInput } = req.body;
+
+    const asmrtist = await db.getAsmrtistById(asmrtistId);
+
+    if (asmrtist.protected) {
+        if (adminPasswordInput !== adminPassword) {
+            return res.status(403).send('Admin password required for editing protected asmrtists');
+        }
+    }
+
     let selectedCategories = req.body.selectedCategories;
 
     if (!Array.isArray(selectedCategories)) {
@@ -56,6 +68,16 @@ const updateASMRtist = asyncHandler(async (req, res) => {
 
 const deleteAsmrtist = asyncHandler(async (req, res) => {
     const asmrtistId = parseInt(req.params.id, 10); 
+    const { adminPasswordInput } = req.body;
+
+    const asmrtist = await db.getAsmrtistById(asmrtistId);
+
+    if (asmrtist.protected) {
+        if (adminPasswordInput !== adminPassword) {
+            return res.status(403).send('Admin password required for deleting protected asmrtists');
+        }
+    }
+
     await db.deleteAsmrtist(asmrtistId);
     res.redirect("/asmrtists");
 });

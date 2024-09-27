@@ -40,6 +40,11 @@
         </ul>
 
     </div>
+
+    <% if (category.protected) { %>
+        <label for="adminPasswordInput">Admin Password:</label>
+        <input type="password" name="adminPasswordInput" required />
+    <% } %>
     
     <div class="new-category-form-submit-button text-center">
         <button type="submit">Edit</button>
