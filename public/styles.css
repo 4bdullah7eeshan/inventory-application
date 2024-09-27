@@ -196,7 +196,8 @@ footer a {
     height: auto;
 }
 
-.category-by-id ul li a {
+.category-by-id ul li a,
+.asmrtist-by-id ul li a {
     color: #7c5797;
 }
 
@@ -214,10 +215,14 @@ table a {
 }
 
 .edit-category-button a,
-.delete-category-button a {
+.delete-category-button a,
+.edit-asmrtist-button a,
+.delete-asmrtist-button a {
     width: 1rem;
     height: auto;
 }
+
+
 
 
 
@@ -232,6 +237,9 @@ table {
     color: white;
 }
 
+.asmrtist-by-id h3 i {
+    color: red;
+}
 
 
 
