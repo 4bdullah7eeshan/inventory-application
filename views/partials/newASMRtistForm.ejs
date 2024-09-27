@@ -1,21 +1,19 @@
 <form method="POST" action="/asmrtists/new" class="new-asmrtist-form">
     <h2 class="text-center">New ASMRtist</h2>
     
-    <div>
+    <div class="lift">
         <label for="name">ASMRtist (required):</label>
         <input type="text" id="name" name="name" placeholder="Made In France ASMR" style="width: 200px;" required>
     </div>
     
-    <div>
-        <div>
-            <label for="yt_channel">YouTube Channel:</label>
-            <input type="url" id="yt_channel" name="yt_channel" placeholder="https://www.youtube.com/@MadeInFranceASMR" style="width: 350px;">
-        </div>
+    <div class="lift">
+        <label for="yt_channel">YouTube Channel (optional):</label>
+        <input type="url" id="yt_channel" name="yt_channel" placeholder="https://www.youtube.com/@MadeInFranceASMR" style="width: 350px;">
     </div>
 
     <div class="lift">
-        <p>Associate Categories:</p>
-        <p>Currently, the following categories exist in your inventory.</p>
+        <p>Associate Categories (optional)</p>
+        <p>Currently, the following categories exist in your inventory:</p>
         <ul>
             <% allCategories.forEach(category => { %>
                 <li>

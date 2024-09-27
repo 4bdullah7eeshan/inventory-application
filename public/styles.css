@@ -55,13 +55,13 @@ nav {
 .edit-asmrtist-button a,
 .delete-asmrtist-button a {
     font-family: 'Viaoda Libre', serif;
-    font-size: rem;
     text-decoration: none;
     color: white;
     outline: 1px solid white;
     background-color: #7c5797;
     padding: 0.5rem;
 }
+
 
 .nav-link a:hover,
 .category-view-button button:hover,
@@ -105,7 +105,7 @@ h6 {
 
 main {
     flex-grow: 1;
-    padding: 0.5rem;
+    padding: 1.5rem;
 }
 
 .home {
@@ -160,7 +160,8 @@ footer a {
 
 }
 
-.add-new-category {
+.add-new-category,
+.add-new-asmrtist {
     margin-top: 1.5rem;
 }
 
@@ -221,10 +222,15 @@ footer a {
 }
 
 .category-by-id ul li a,
-.asmrtist-by-id ul li a {
+.asmrtist-by-id ul li a,
+.delete-asmrtist-form ul li a,
+.delete-category-form ul li a {
     color: #7c5797;
 }
 
+table {
+    margin-top: 1.5rem;
+}
 table a {
     color: black;
 }
