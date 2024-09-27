@@ -3,6 +3,8 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+
 
 
 
@@ -10,7 +12,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Viaoda Libre', cursive;
+    font-family: 'Belleza', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Viaoda Libre', serif;
 }
 
 
@@ -48,7 +54,7 @@ nav {
 .new-asmrtist-form-submit-button button,
 .edit-asmrtist-button a,
 .delete-asmrtist-button a {
-    font-family: 'Viaoda Libre', cursive;
+    font-family: 'Viaoda Libre', serif;
     font-size: rem;
     text-decoration: none;
     color: white;
