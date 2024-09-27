@@ -40,15 +40,6 @@
         </ul>
 
     </div>
-
-    <div>
-        <label for="asmrtists">Add/Remove ASMRtists:</label>
-        <select name="selectedAsmrtists" multiple>
-            <% allAsmrtists.forEach(asmrtist => { %>
-                <option value="<%= asmrtist.id %>"><%= asmrtist.name %></option>
-            <% }) %>
-        </select>
-    </div>
     
     <div class="new-category-form-submit-button text-center">
         <button type="submit">Edit</button>

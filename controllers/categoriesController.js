@@ -38,7 +38,12 @@ const getUpdateCategory = asyncHandler(async (req, res) => {
 
 const updateCategory = asyncHandler(async (req, res) => {
     const categoryId = parseInt(req.params.id, 10);
-    const { name, description, image, selectedAsmrtists } = req.body; 
+    const { name, description, image } = req.body;
+    let selectedAsmrtists = req.body.selectedAsmrtists;
+
+    if (!Array.isArray(selectedAsmrtists)) {
+        selectedAsmrtists = selectedAsmrtists ? [selectedAsmrtists] : [];
+    }
 
     await db.updateCategory(categoryId, { name, description, image });
     await db.updateCategoryAsmrtists(categoryId, selectedAsmrtists);
@@ -52,29 +57,6 @@ const deleteCategory = asyncHandler(async (req, res) => {
     res.redirect("/categories");
 });
 
-// assoc
-
-const getAsmrtistsForCategory = asyncHandler(async (req, res) => {
-    const categoryId = parseInt(req.params.id, 10);
-    const asmrtists = await db.getAsmrtistsByCategory(categoryId);
-});
-
-const associateAsmrtistWithCategory = asyncHandler(async (req, res) => {
-    const categoryId = parseInt(req.params.categoryId, 10);
-    const { asmrtist_id } = req.body;
-
-    await db.associateAsmrtistWithCategory(asmrtist_id, categoryId);
-});
-
-const removeAsmrtistFromCategory = asyncHandler(async (req, res) => {
-    const categoryId = parseInt(req.params.categoryId, 10);
-    const asmrtistId = parseInt(req.params.asmrtistId, 10);
-
-    await db.removeAsmrtistFromCategory(asmrtistId, categoryId);
-    res.redirect(`/categories/${categoryId}/asmrtists`);
-});
-
-
 
 module.exports = {
     getAllCategories,
@@ -84,7 +66,4 @@ module.exports = {
     updateCategory,
     getUpdateCategory,
     deleteCategory,
-    getAsmrtistsForCategory,
-    associateAsmrtistWithCategory,
-    removeAsmrtistFromCategory
 };
