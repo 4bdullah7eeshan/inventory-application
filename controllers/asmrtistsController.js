@@ -69,7 +69,9 @@ const updateASMRtist = asyncHandler(async (req, res) => {
 const getDeleteAsmrtist = asyncHandler(async (req, res) => {
     const asmrtistId = parseInt(req.params.id, 10);
     const asmrtist = await db.getAsmrtistById(asmrtistId);
-    res.render("pages/deleteASMRtist", { title: `Delete "${asmrtist.name}" ASMRtist?`, asmrtist: asmrtist});
+    const categories = await db.getCategoriesByAsmrtist(asmrtistId);
+
+    res.render("pages/deleteASMRtist", { title: `Delete "${asmrtist.name}" ASMRtist?`, asmrtist: asmrtist, categories});
 
 })
 

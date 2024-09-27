@@ -176,7 +176,8 @@ footer a {
 .edit-category-form,
 .new-asmrtist-form,
 .edit-asmrtist-form,
-.delete-category-form {
+.delete-category-form,
+.delete-asmrtist-form {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -7,7 +7,7 @@
         <p>The following ASMRtist(s) are associated with <%= category.name %>:</p>
         <ul>
             <% asmrtists.forEach(asmrtist => { %>
-                <li><a href="/asmrtists/:asmrtist.id"><%= asmrtist.name %></a></li>
+                <li><a href="/asmrtists/<%= asmrtist.id %>"><%= asmrtist.name %></a></li>
             <% }) %>
         </ul>
         <p>These will <em>not</em> be deleted, however the associations will fease to exist.</p>

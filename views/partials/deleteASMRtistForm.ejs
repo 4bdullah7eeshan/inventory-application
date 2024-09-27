@@ -1,8 +1,28 @@
-<form action="/asmrtists/<%= asmrtist.id %>/delete" method="POST">
-    <% if (asmrtist.protected) { %> 
-        <label for="adminPasswordInput">Admin Password:</label>
-        <input type="password" name="adminPasswordInput" required />
-    <% } %>
+<form action="/asmrtists/<%= asmrtist.id %>/delete" method="POST" class="delete-asmrtist-form">
+    <h2 class="text-center"><%= title %></h2>
+    <p class="text-center"><strong>This action can not reverted back!</strong></p>
 
-    <button type="submit">Confirm Delete</button>
+    <div class="lift">
+        <h3>Summary</h3>
+        <p>The following categories are associated with <%= asmrtist.name %>:</p>
+        <ul>
+            <% categories.forEach(category => { %>
+                <li><a href="/categories/<%= category.id %>"><%= category.name %></a></li>
+            <% }) %>
+        </ul>
+        <p>These will <em>not</em> be deleted, however the associations will fease to exist.</p>
+    </div>
+
+
+    <% if (asmrtist.protected) { %>
+        <div class="lift">
+            <h5>Note:</h5>
+            <p>The category "<%= asmrtist.name %>" is protected by admin. If you are the admin, please enter the password below.</p>
+            <label for="adminPasswordInput">Admin Password:</label>
+            <input type="password" name="adminPasswordInput" required />
+        </div>
+    <% } %>
+    <div class="new-category-form-submit-button">
+        <button type="submit">Confirm Delete</button>
+    </div>
 </form>
