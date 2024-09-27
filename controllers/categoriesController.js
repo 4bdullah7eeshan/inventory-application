@@ -37,10 +37,12 @@ const getUpdateCategory = asyncHandler(async (req, res) => {
 });
 
 const updateCategory = asyncHandler(async (req, res) => {
-    const categoryId = parseInt(req.params.id, 10); 
-    const { name, description, image } = req.body; 
+    const categoryId = parseInt(req.params.id, 10);
+    const { name, description, image, selectedAsmrtists } = req.body; 
 
     await db.updateCategory(categoryId, { name, description, image });
+    await db.updateCategoryAsmrtists(categoryId, selectedAsmrtists);
+
     res.redirect(`/categories/${categoryId}`);
 });
 
