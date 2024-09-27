@@ -36,7 +36,7 @@ const getUpdateCategory = asyncHandler(async (req, res) => {
     const category = await db.getCategoryById(categoryId);
     const associatedAsmrtists = await db.getAsmrtistsByCategory(categoryId);
     const allAsmrtists = await db.getAllAsmrtists();
-    res.render("pages/editCategory", { title: "Edit" + category.name, category: category, associatedAsmrtists, allAsmrtists });
+    res.render("pages/editCategory", { title: `Edit "${category.name}" Category`, category: category, associatedAsmrtists, allAsmrtists });
 });
 
 const updateCategory = asyncHandler(async (req, res) => {
@@ -65,7 +65,7 @@ const updateCategory = asyncHandler(async (req, res) => {
 const getDeleteCategory = asyncHandler(async (req, res) => {
     const categoryId = parseInt(req.params.id, 10);
     const category = await db.getCategoryById(categoryId);
-    res.render("pages/deleteCategory", { title: "Edit" + category.name, category: category});
+    res.render("pages/deleteCategory", { title: `Delete "${category.name}" Category?`, category: category});
 
 })
 

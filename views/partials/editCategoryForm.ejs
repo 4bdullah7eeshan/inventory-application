@@ -1,5 +1,5 @@
 <form method="POST" action="/categories/<%= category.id %>/edit" class="edit-category-form">
-    <h2 class="text-center">Edit Category</h2>
+    <h2 class="text-center"><%= title %></h2>
     
     <div>
         <label for="name">Category (required):</label>
@@ -22,7 +22,7 @@
     </div>
 
     <div>
-        <h3>Associated ASMRtists:</h3>
+        <h5>Associated ASMRtists:</h5>
         <ul>
             <% allAsmrtists.forEach(asmrtist => { %>
                 <li>
@@ -42,6 +42,8 @@
     </div>
 
     <% if (category.protected) { %>
+        <h5>Note:</h5>
+        <p>The category "<%= category.name %>" is protected by admin. If you are the admin, please enter the password below.</p>
         <label for="adminPasswordInput">Admin Password:</label>
         <input type="password" name="adminPasswordInput" required />
     <% } %>
