@@ -12,7 +12,8 @@ async function getAllAsmrtists() {
 };
   
 async function insertNewCategory({ name, description, image }) {
-    await pool.query("INSERT INTO categories (name, description, image) VALUES ($1, $2, $3)", [name, description, image]);
+    const { rows } = await pool.query("INSERT INTO categories (name, description, image) VALUES ($1, $2, $3) RETURNING *", [name, description, image]);
+    return rows[0];
 };
 
 async function insertNewAsmrtist({ name, yt_channel }) {

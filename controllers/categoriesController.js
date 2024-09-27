@@ -17,12 +17,27 @@ const getNewCategory = asyncHandler(async (req, res) => {
 });
 
 const createNewCategory = asyncHandler(async (req, res) => {
-    const { name, description, image } = req.body;
+    const { name, description, image, selectedAsmrtists } = req.body;
     console.log(req.body);
     console.log(name);
     console.log(description);
     console.log(image);
-    await db.insertNewCategory({ name: name, description: description, image: image });
+    console.log(selectedAsmrtists);
+    if (!selectedAsmrtists) {
+        console.log("No ASMRtists selected");
+    } else {
+        console.log("Selected ASMRtists:", selectedAsmrtists);
+    }
+    const newCategory = await db.insertNewCategory({ name: name, description: description, image: image });
+    if (selectedAsmrtists && selectedAsmrtists.length > 0) {
+        const asmrtistIds = Array.isArray(selectedAsmrtists) ? selectedAsmrtists : [selectedAsmrtists];
+        console.log(asmrtistIds);
+        const associationPromises = asmrtistIds.map(asmrtistId => {
+            return db.associateAsmrtistWithCategory(newCategory.id, asmrtistId);
+        });
+
+        await Promise.all(associationPromises);
+    }
     res.redirect("/categories");
 });
 
