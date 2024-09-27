@@ -20,6 +20,25 @@
         <label for="image">Image URL:</label>
         <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" style="width: 230px;">
     </div>
+
+    <div>
+        <p>Associate ASMRtists:</p>
+        <p>Currently, the following ASMRTists exist in your inventory.</p>
+        <ul>
+            <% allAsmrtists.forEach(asmrtist => { %>
+                <li>
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            name="selectedAsmrtists" 
+                            value="<%= asmrtist.id %>"
+                        />
+                        <%= asmrtist.name %>
+                    </label>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
     
     <div class="new-category-form-submit-button text-center">
         <button type="submit">Post</button>

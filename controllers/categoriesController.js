@@ -10,7 +10,10 @@ const getAllCategories = asyncHandler(async (req, res) => {
 });
 
 const getNewCategory = asyncHandler(async (req, res) => {
-    res.render("pages/newCategory", { title: "New Category" });
+    const allAsmrtists = await db.getAllAsmrtists();
+
+    res.render("pages/newCategory", { title: "New Category", allAsmrtists });
+
 });
 
 const createNewCategory = asyncHandler(async (req, res) => {
