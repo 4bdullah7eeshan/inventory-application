@@ -12,6 +12,27 @@
             <input type="url" id="yt_channel" name="yt_channel" placeholder="https://www.youtube.com/@MadeInFranceASMR" style="width: 350px;" value="<%= asmrtist.yt_channel %>">
         </div>
     </div>
+
+    <div>
+        <h3>Associated Categories:</h3>
+        <ul>
+            <% allCategories.forEach(category => { %>
+                <li>
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            name="selectedCategories" 
+                            value="<%= category.id %>" 
+                            <% if (associatedCategories.some(c => c.id === category.id)) { %> checked <% } %>
+                        />
+                        <%= category.name %>
+                    </label>
+                </li>
+            <% }) %>
+        </ul>
+
+    </div>
+
     <div class="new-category-form-submit-button text-center">
         <button type="submit">Edit</button>
     </div>

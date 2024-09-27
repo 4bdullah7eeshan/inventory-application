@@ -20,6 +20,35 @@
         <label for="image">Image URL:</label>
         <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg" style="width: 230px;" value="<%= category.image %>">
     </div>
+
+    <div>
+        <h3>Associated ASMRtists:</h3>
+        <ul>
+            <% allAsmrtists.forEach(asmrtist => { %>
+                <li>
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            name="selectedAsmrtists" 
+                            value="<%= asmrtist.id %>"
+                            <% if (associatedAsmrtists.some(a => a.id === asmrtist.id)) { %> checked <% } %> 
+                        />
+                        <%= asmrtist.name %>
+                    </label>
+                </li>
+            <% }) %>
+        </ul>
+
+    </div>
+
+    <div>
+        <label for="asmrtists">Add/Remove ASMRtists:</label>
+        <select name="selectedAsmrtists" multiple>
+            <% allAsmrtists.forEach(asmrtist => { %>
+                <option value="<%= asmrtist.id %>"><%= asmrtist.name %></option>
+            <% }) %>
+        </select>
+    </div>
     
     <div class="new-category-form-submit-button text-center">
         <button type="submit">Edit</button>

@@ -4,6 +4,12 @@
         <img src="<%= category.image %>" alt="<%= category.name %>">
     </div>
     <p><%= category.description %></p>
+    <h3>Associated ASMRtists:</h3>
+    <ul>
+        <% asmrtists.forEach(asmrtist => { %>
+            <li><%= asmrtist.name %></li>
+        <% }) %>
+    </ul>
     <div class="category-manage-buttons">
         <span class="edit-category-button text-center">
             <a href="/categories/<%= category.id %>/edit">Edit</a>
