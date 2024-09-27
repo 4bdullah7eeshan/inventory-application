@@ -188,20 +188,34 @@ footer a {
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding: 1rem;
 }
 
 .category-by-id img {
-    width: 20rem;
+    width: 25rem;
     height: auto;
+}
+
+.category-by-id ul li a {
+    color: #7c5797;
 }
 
 .category-manage-buttons,
 .asmrtist-manage-buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
+
+.edit-category-button a,
+.delete-category-button a {
+    width: 1rem;
+    height: auto;
+}
+
+
 
 .all-asmrtists-table-container {
     display: flex;
